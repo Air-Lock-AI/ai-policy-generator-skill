@@ -27,6 +27,14 @@ When the skill runs to completion, it writes two files to the user's folder:
 
 The user opens the HTML, hits the floating **Save as PDF** button (or Cmd/Ctrl+P), prints with Margins: None, and gets a clean signed PDF.
 
+<p align="center">
+  <a href="https://www.air-lock.ai/ai-policy">
+    <img src="https://www.air-lock.ai/assets/blog/airlock-ai-policy-promo.png" alt="Example output: a three-page AI Use Policy for the fictional Vandermeer Consulting NV" width="100%">
+  </a>
+  <br>
+  <sub><em>Example output for the fictional Vandermeer Consulting NV (cover, the rules, the duties). The skill ships with this filled example at <code>examples/sample-vandermeer.html</code>.</em></sub>
+</p>
+
 ## Quick start
 
 ### Option A — Native Claude (drag-and-drop, one click)
