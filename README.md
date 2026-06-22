@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://www.air-lock.ai/ai-policy">
+    <img src="https://www.air-lock.ai/assets/blog/airlock-ai-policy-promo.png" alt="airlock AI Acceptable Use Policy generator: a one-page example" width="100%">
+  </a>
+</p>
+
 # ai-policy-generator
 
 A Claude Code / Cowork skill that generates a polished three-page **AI Use Policy** for any company. Aligned to **EU AI Act Articles 4, 5 and 50**, with optional **Annex III** high-risk addendum for regulated sectors.
@@ -12,6 +18,14 @@ When the skill runs to completion, it writes two files to the user's folder:
 - `ai-use-policy-{slug}-inputs.json` — sidecar with every answer, used to re-run the skill with minimal questions next time
 
 The user opens the HTML, hits the floating **Save as PDF** button (or Cmd/Ctrl+P), prints with Margins: None, and gets a clean signed PDF.
+
+<p align="center">
+  <a href="https://www.air-lock.ai/ai-policy">
+    <img src="https://www.air-lock.ai/assets/blog/airlock-ai-policy-snippet.jpg" alt="Top of the example one-pager for fictional Vandermeer Consulting NV" width="70%">
+  </a>
+  <br>
+  <sub><em>Top of the example one-pager for a fictional consulting firm. Same render shown on the <a href="https://www.air-lock.ai/blog/shadow-ai">shadow AI article</a>.</em></sub>
+</p>
 
 ## Quick start
 
