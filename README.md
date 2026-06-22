@@ -15,15 +15,21 @@ The user opens the HTML, hits the floating **Save as PDF** button (or Cmd/Ctrl+P
 
 ## Quick start
 
-### Option A — Install as a downloadable skill bundle
+### Option A — Native Claude (drag-and-drop, one click)
 
-1. Run `./build.sh` to produce `ai-policy-generator.skill` (a zip of this directory)
-2. Drag the `.skill` file into Cowork or Claude Code
-3. Trigger with any of: *"create an AI policy"*, *"draft an AI use policy"*, *"AI policy generator"*
+Grab the latest `ai-policy-generator.skill` from the [Releases page](https://github.com/Air-Lock-AI/ai-policy-generator-skill/releases) and drop it into Cowork or Claude Code. Then trigger with: *"create an AI policy"*, *"draft an AI use policy"*, or *"AI policy generator"*.
 
-### Option B — Use directly from this checkout
+No Releases yet? Build locally:
 
-Symlink the directory into your skills folder:
+```bash
+git clone https://github.com/Air-Lock-AI/ai-policy-generator-skill.git
+cd ai-policy-generator-skill
+./build.sh   # produces ai-policy-generator.skill in the parent directory
+```
+
+### Option B — Use directly from a clone (Claude Code / Cowork)
+
+Symlink the checkout into your skills folder:
 
 ```bash
 ln -s "$(pwd)" ~/.claude/skills/ai-policy-generator
@@ -31,27 +37,34 @@ ln -s "$(pwd)" ~/.claude/skills/ai-policy-generator
 ln -s "$(pwd)" "$HOME/Library/Application Support/Claude/skills/ai-policy-generator"
 ```
 
-Trigger as above. The skill reads `template.html` and `i18n/{lang}.json` at runtime.
+The skill reads `template.html` and `i18n/{lang}.json` at runtime.
+
+### Option C — ChatGPT, Gemini, or Microsoft Copilot
+
+The same source files run inside any client that accepts attached project files plus a system prompt. See **[INSTALL-OTHER-CLIENTS.md](INSTALL-OTHER-CLIENTS.md)** for the full per-vendor setup (Projects, Gems, Agents). Short version: clone the repo, attach `SKILL.md` + `template.html` + the `i18n/` and `examples/` folders to a Project, paste the instructions snippet from the install guide, then say *"Generate our AI policy."*
 
 ## What's in this repo
 
 ```
 ai-policy-generator-skill/
-├── README.md                    # this file
-├── LICENSE                      # MIT
-├── CHANGELOG.md                 # version history
-├── build.sh                     # zips the directory into ai-policy-generator.skill
-├── SKILL.md                     # the skill instructions (read by Claude at runtime)
-├── template.html                # the policy template with {{PLACEHOLDER}} markers
+├── README.md                       # this file
+├── INSTALL-OTHER-CLIENTS.md        # ChatGPT / Gemini / Microsoft Copilot setup
+├── LICENSE                         # MIT
+├── CHANGELOG.md                    # version history
+├── build.sh                        # zips the directory into ai-policy-generator.skill
+├── SKILL.md                        # the skill instructions (read by Claude at runtime)
+├── template.html                   # the policy template with {{PLACEHOLDER}} markers
 ├── i18n/
-│   ├── en.json                  # English string pack
-│   ├── nl.json                  # Dutch
-│   ├── fr.json                  # French
-│   └── de.json                  # German
+│   ├── en.json                     # English string pack
+│   ├── nl.json                     # Dutch
+│   ├── fr.json                     # French
+│   └── de.json                     # German
 └── examples/
     ├── sample-vandermeer-inputs.json   # fictional filled example (inputs)
     └── sample-vandermeer.html          # fictional filled example (rendered)
 ```
+
+Built artifacts (the `.skill` bundle) are published on the [Releases page](https://github.com/Air-Lock-AI/ai-policy-generator-skill/releases), not committed to source.
 
 ## The flow
 
