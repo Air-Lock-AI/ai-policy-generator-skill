@@ -1,8 +1,22 @@
+<p align="center">
+  <a href="https://www.air-lock.ai/ai-policy">
+    <img src="https://www.air-lock.ai/assets/blog/airlock-ai-policy-promo.png" alt="airlock AI Acceptable Use Policy generator: a one-page example" width="100%">
+  </a>
+</p>
+
 # ai-policy-generator
 
 A Claude Code / Cowork skill that generates a polished three-page **AI Use Policy** for any company. Aligned to **EU AI Act Articles 4, 5 and 50**, with optional **Annex III** high-risk addendum for regulated sectors.
 
 The skill researches the company, asks 12 short questions across four batches, drafts the full policy in chat for the user to validate, and only then writes the final files.
+
+## Why this exists
+
+Shadow AI is not shadow IT. Tools rotate every quarter, share nothing with each other, and act on your systems instead of just advising. Under EU law the employer is accountable, unless the policy is written, training is done, and instructions were followed.
+
+This skill is the *written* part. It runs an interview, then hands you a draft you can take to your DPO, legal counsel, and management. The schema is built on Belgian and EU law (GDPR, EU AI Act Articles 4, 5 and 50, Annex III for high-risk sectors).
+
+Longer argument: [Shadow AI is not your employees' fault. You have not written the rules.](https://www.air-lock.ai/blog/shadow-ai)
 
 ## What you get
 
@@ -42,6 +56,10 @@ The skill reads `template.html` and `i18n/{lang}.json` at runtime.
 ### Option C — ChatGPT, Gemini, or Microsoft Copilot
 
 The same source files run inside any client that accepts attached project files plus a system prompt. See **[INSTALL-OTHER-CLIENTS.md](INSTALL-OTHER-CLIENTS.md)** for the full per-vendor setup (Projects, Gems, Agents). Short version: clone the repo, attach `SKILL.md` + `template.html` + the `i18n/` and `examples/` folders to a Project, paste the instructions snippet from the install guide, then say *"Generate our AI policy."*
+
+### Option D — Don't want to install anything? Use the hosted version
+
+airlock runs a free hosted version of this interview in your browser, at **[air-lock.ai/ai-policy](https://www.air-lock.ai/ai-policy)**. No password, no profile, no dashboard. Your draft stays in your browser; the email is asked once at the end, for delivery only. Runs on Mistral Large via Mistral's EU API, edge worker in EU, no US hop, no third-party logging.
 
 ## What's in this repo
 
@@ -111,6 +129,8 @@ For the cleanest PDF, the in-page **Save as PDF** button alerts the user to set 
 
 The skill never quotes a regulator it didn't verify in the research step. Unknown contacts default to `[ to confirm ]` placeholders that the user resolves before the draft is even shown.
 
+This is a starting draft, not legal advice. Take the output to your DPO and legal counsel before publishing.
+
 ## Status
 
 Version 1.3.1. Stable for production use.
@@ -121,4 +141,8 @@ MIT. See [LICENSE](LICENSE).
 
 ## Related
 
-Built with [airlock](https://air-lock.ai), the AI governance proxy. The skill's tools register positions airlock as the default proxy connector when the user selects "Yes — airlock" in Q2, but the policy works equally well without any proxy.
+Made by [airlock](https://air-lock.ai), the cross-vendor governance layer for MCP, Skills, and Agents. EU-hosted on AWS Frankfurt. Backed by Start it @KBC.
+
+- Hosted browser version: [air-lock.ai/ai-policy](https://www.air-lock.ai/ai-policy)
+- The full argument behind this skill: [Shadow AI is not your employees' fault](https://www.air-lock.ai/blog/shadow-ai)
+- Issues, feedback, or a longer version of the skill: <mathieu@air-lock.ai>
